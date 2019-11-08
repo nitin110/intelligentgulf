@@ -1,0 +1,26 @@
+
+schema{
+ query:Query
+}
+type PcVehicle {
+   registrationNumber:String
+   make:String
+   model:String
+   vin:String 
+   requestedDeviceTypeCode:String
+   modificationCodes:[String]
+   installationNotes:String
+}
+
+type PCPolicyHolderDetails {
+
+email:String
+noClaimDiscount:String
+drivingTestPassed:String
+postcode:String
+phone:String
+policyHolderEndorsements:PCEndorsement
+
+}
+
+
