@@ -1,0 +1,100 @@
+#api:
+#  version:
+#    path: /api/v1
+#
+#app:
+#  fixed-executor-thread-count: 5
+#  time-zone: Europe/London
+#  default-application-group: 82c594e6-d5bd-4e09-bef6-778246279e08
+#
+#server:
+# port: 9033
+#  servlet:
+#    context-path: /quest-sftp-adapter-service
+# tomcat:
+#    accesslog:
+#      enabled: true
+#      buffered: false
+#      prefix: stdout
+#      directory: /dev
+#      suffix:
+#      file-date-format:
+#
+service:
+#  sftp:
+#   url: https://www.travido.info:443/api/v1
+#    username: ${SFTP_OAUTH_USER:Dummy-Ask-Mayank}
+#    password: ${SFTP_OAUTH_PASS:Dummy-Ask-Mayank}
+#    projectid: 020
+#    duration: 1500
+#    maximum-time-window-sec: 45
+#    trigger: 30
+#    journey-time: 5
+  ingestion-gateway:
+    url: http://dev-api.questmotor.app/insure-app-bff/api/v1/policies
+    auth:
+      url: https://dev-auth.questmotor.app/auth/realms/insurer/protocol/openid-connect/token
+#    min-attempt: 5
+#  urls:
+#    journey : /trips
+#    gps: /gps_data
+#    accel: /accel_data/
+#    video: /videos/
+#    cloestid: /closest_id
+#    new_incident: /events?event_ids=true&
+#    videoDownload: https://www.travido.info:443/api/v1/videos
+#  slack:
+#     url: ${ALERTING_URL:test}
+
+#------------------------------------
+# Kafka
+#------------------------------------
+
+#KAFKA_BROKERS: "localhost:9093"
+#
+#spring:
+#  kafka:
+#    bootstrap-servers: ${KAFKA_BROKERS}
+#    producer:
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      properties:
+#        max.block.ms: 5000
+#
+#queue:
+#  timeout: 3
+#  topic:
+#    out:
+#      event: event-notifications
+#      device: device-change-notifications
+#      sim: sim-change-notifications
+
+#------------------------------------
+# Mongo
+#------------------------------------
+#management:
+#  endpoints:
+#    web:
+#      base-path: /manage
+#      exposure:
+#        include: health, info, prometheus
+#  endpoint:
+#    info:
+#      enabled: true
+#    health:
+#      enabled: true
+#      show-details: always
+#
+#spring:
+#  data:
+#    mongodb:
+#      host: ${MONGO_HOST:localhost}
+#      port: ${MONGO_PORT:27017}
+#      authentication-database: ${MONGO_AUTH_DB_NAME}
+#      username: ${MONGO_USERNAME}
+#      password: ${MONGO_PASSWORD}
+#      database: ${MONGO_DB_NAME}
+#
+#sftp:
+#  crash:
+#    confidence: 75
